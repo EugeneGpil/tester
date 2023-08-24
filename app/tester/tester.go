@@ -12,7 +12,7 @@ var t *testing.T
 
 func AssertLen(var1 interface{}, length int) {
 	if len := reflect.ValueOf(var1).Len(); len != length {
-		t.Fatalf(`routes count = %q, want match for %q`, len, length)
+		t.Fatalf(`elements count = %q, want match for %q`, len, length)
 	}
 }
 
