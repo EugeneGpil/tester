@@ -5,6 +5,7 @@ import "net/http"
 type ResponseWriter struct{}
 
 var messages [][]byte
+var status int
 
 func NewResponseWriter() ResponseWriter {
 	return ResponseWriter{}
@@ -23,8 +24,14 @@ func (writer ResponseWriter) Write(message []byte) (int, error) {
 }
 
 // Implementation of net/http.responseWriter interface
-func (writer ResponseWriter) WriteHeader(statusCode int) {}
+func (writer ResponseWriter) WriteHeader(statusCode int) {
+	status = statusCode
+}
 
 func (writer *ResponseWriter) GetMessages() [][]byte {
 	return messages
+}
+
+func (writer *ResponseWriter) GetStatus() int {
+	return status
 }
