@@ -5,7 +5,6 @@ import (
 	"testing"
 
 	"github.com/EugeneGpil/tester/app/tester/methods"
-	"github.com/EugeneGpil/tester/app/types"
 )
 
 var t *testing.T
@@ -30,10 +29,6 @@ func AssertNotNil(var1 interface{}) {
 
 func AssertSame(var1 interface{}, var2 interface{}) {
 	methods.AssertSame(var1, var2, t)
-}
-
-func GetTestResponseWriter() types.ResponseWriter {
-	return types.NewResponseWriter()
 }
 
 func SetTester(tester *testing.T) {

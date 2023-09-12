@@ -4,7 +4,6 @@ import (
 	"testing"
 
 	internalTester "github.com/EugeneGpil/tester/app/tester"
-	"github.com/EugeneGpil/tester/app/types"
 )
 
 func AssertLen(var1 interface{}, length int) {
@@ -21,10 +20,6 @@ func AssertNotNil(var1 interface{}) {
 
 func AssertSame(var1 interface{}, var2 interface{}) {
 	internalTester.AssertSame(var1, var2)
-}
-
-func GetTestResponseWriter() types.ResponseWriter {
-	return internalTester.GetTestResponseWriter()
 }
 
 func SetTester(tester *testing.T) {
