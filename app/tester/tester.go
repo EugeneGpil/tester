@@ -11,19 +11,19 @@ var t *testing.T
 
 func AssertLen(var1 interface{}, length int) {
 	if len := reflect.ValueOf(var1).Len(); len != length {
-		t.Fatalf(`elements count = %q, want match for %q`, len, length)
+		methods.Panic(`elements count = %q, want match for %q`, len, length)
 	}
 }
 
 func AssertNil(var1 interface{}) {
 	if var1 != nil {
-		t.Fatalf("variable is not nil")
+		methods.Panic("variable is not nil")
 	}
 }
 
 func AssertNotNil(var1 interface{}) {
 	if var1 == nil {
-		t.Fatalf(`variable is nil`)
+		methods.Panic(`variable is nil`)
 	}
 }
 

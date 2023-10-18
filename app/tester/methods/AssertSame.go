@@ -8,7 +8,7 @@ import (
 
 func AssertSame(var1 interface{}, var2 interface{}, t *testing.T) {
 	if reflect.TypeOf(var1) != reflect.TypeOf(var2) {
-		t.Fatalf(`types do not match %T, %T`, var1, var2)
+		Panic(`types do not match %T, %T`, var1, var2)
 	}
 
 	if reflect.TypeOf(var1).String() == "[]uint8" {
@@ -18,6 +18,6 @@ func AssertSame(var1 interface{}, var2 interface{}, t *testing.T) {
 	}
 
 	if var1 != var2 {
-		t.Fatalf(`var1 = %q, want match for %q`, var1, var2)
+		Panic(`var1 = %q, want match for %q`, var1, var2)
 	}
 }
